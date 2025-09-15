@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+
+<properties>
+    <!-- Database Configuration -->
+    <entry key='database.driver'>org.postgresql.Driver</entry>
+    <entry key='database.url'>jdbc:postgresql://postgres:5432/nagaratrack</entry>
+    <entry key='database.user'>postgres</entry>
+    <entry key='database.password'>password</entry>
+
+    <!-- Server Configuration -->
+    <entry key='web.port'>8082</entry>
+    <entry key='geocoder.enable'>false</entry>
+    
+    <!-- GPS Protocol Ports -->
+    <entry key='gps103.port'>5001</entry>
+    <entry key='tk103.port'>5002</entry>
+    <entry key='gl100.port'>5003</entry>
+    <entry key='gl200.port'>5004</entry>
+    <entry key='t55.port'>5005</entry>
+    <entry key='xexun.port'>5006</entry>
+    <entry key='totem.port'>5007</entry>
+    <entry key='enfora.port'>5008</entry>
+    <entry key='meiligao.port'>5009</entry>
+    <entry key='maxon.port'>5010</entry>
+    
+    <!-- Disable excessive logging for demo -->
+    <entry key='logger.level'>INFO</entry>
+</properties>
