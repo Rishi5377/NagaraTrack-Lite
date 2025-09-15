@@ -1,0 +1,231 @@
+version: '3.8'# Production Docker Compose Configuration
+
+# Use: docker-compose -f docker-compose.prod.yml up -d
+
+services:
+
+  # Production nginx reverse proxyservices:
+
+  nginx:  postgres:
+
+    image: nginx:alpine    image: postgis/postgis:15-3.3
+
+    ports:    container_name: nagaratrack-postgres-prod
+
+      - "80:80"    restart: unless-stopped
+
+      - "443:443"    env_file:
+
+    volumes:      - .env.production
+
+      - ./infra/nginx.conf:/etc/nginx/nginx.conf:ro    environment:
+
+      - ./infra/ssl:/etc/nginx/ssl:ro      POSTGRES_DB: ${POSTGRES_DB}
+
+      - frontend_dist:/usr/share/nginx/html:ro      POSTGRES_USER: ${POSTGRES_USER}
+
+    depends_on:      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+      - backend    volumes:
+
+      - frontend      - postgres_data_prod:/var/lib/postgresql/data
+
+    restart: unless-stopped      - ./infra/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    networks:    networks:
+
+      - nagaratrack_network      - nagaratrack-network-prod
+
+    healthcheck:
+
+  backend:      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+
+    build:       interval: 30s
+
+      context: ./backend      timeout: 10s
+
+      dockerfile: Dockerfile      retries: 3
+
+    environment:
+
+      - PRODUCTION=true  backend:
+
+      - DATABASE_URL=${DATABASE_URL}    build: 
+
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}      context: ./backend
+
+      - CORS_ORIGINS=${CORS_ORIGINS}      dockerfile: Dockerfile
+
+      - REDIS_URL=redis://redis:6379/0    container_name: nagaratrack-backend-prod
+
+    depends_on:    restart: unless-stopped
+
+      postgres:    env_file:
+
+        condition: service_healthy      - .env.production
+
+      redis:    environment:
+
+        condition: service_healthy      DATABASE_URL: ${DATABASE_URL}
+
+    volumes:      USE_DATABASE: "true"
+
+      - ./data:/app/data:ro      PRODUCTION: "true"
+
+      - app_backups:/app/backups    volumes:
+
+    restart: unless-stopped      - ./data:/app/data
+
+    networks:    depends_on:
+
+      - nagaratrack_network      postgres:
+
+    healthcheck:        condition: service_healthy
+
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]    networks:
+
+      interval: 30s      - nagaratrack-network-prod
+
+      timeout: 10s    healthcheck:
+
+      retries: 3      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+
+      interval: 30s
+
+  frontend:      timeout: 10s
+
+    build:      retries: 3
+
+      context: ./frontend-pwa
+
+      dockerfile: Dockerfile  frontend:
+
+      target: production    build:
+
+    volumes:      context: ./frontend-pwa
+
+      - frontend_dist:/app/dist      dockerfile: Dockerfile
+
+    restart: "no"      args:
+
+    networks:        VITE_API_URL: ${VITE_API_URL}
+
+      - nagaratrack_network    container_name: nagaratrack-frontend-prod
+
+    restart: unless-stopped
+
+  postgres:    networks:
+
+    image: postgres:15-alpine      - nagaratrack-network-prod
+
+    environment:    healthcheck:
+
+      POSTGRES_DB: ${POSTGRES_DB}      test: ["CMD", "curl", "-f", "http://localhost:5000"]
+
+      POSTGRES_USER: ${POSTGRES_USER}      interval: 30s
+
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}      timeout: 10s
+
+    volumes:      retries: 3
+
+      - postgres_data:/var/lib/postgresql/data
+
+      - ./infra/init.sql:/docker-entrypoint-initdb.d/init.sql:ro  nginx:
+
+      - app_backups:/backups    image: nginx:alpine
+
+    restart: unless-stopped    container_name: nagaratrack-nginx-prod
+
+    networks:    restart: unless-stopped
+
+      - nagaratrack_network    ports:
+
+    healthcheck:      - "80:80"
+
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]      - "443:443"
+
+      interval: 10s    volumes:
+
+      timeout: 5s      - ./infra/nginx.conf:/etc/nginx/nginx.conf:ro
+
+      retries: 5      - ./infra/ssl:/etc/nginx/ssl:ro
+
+    depends_on:
+
+  redis:      - backend
+
+    image: redis:7-alpine      - frontend
+
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-}    networks:
+
+    volumes:      - nagaratrack-network-prod
+
+      - redis_data:/data
+
+    restart: unless-stopped  redis:
+
+    networks:    image: redis:7-alpine
+
+      - nagaratrack_network    container_name: nagaratrack-redis-prod
+
+    healthcheck:    restart: unless-stopped
+
+      test: ["CMD", "redis-cli", "ping"]    networks:
+
+      interval: 10s      - nagaratrack-network-prod
+
+      timeout: 5s    healthcheck:
+
+      retries: 3      test: ["CMD", "redis-cli", "ping"]
+
+      interval: 30s
+
+  # Backup service      timeout: 10s
+
+  backup:      retries: 3
+
+    build: 
+
+      context: ./backendvolumes:
+
+      dockerfile: Dockerfile  postgres_data_prod:
+
+    environment:    driver: local
+
+      - POSTGRES_DB=${POSTGRES_DB}
+
+      - POSTGRES_USER=${POSTGRES_USER}networks:
+
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}  nagaratrack-network-prod:
+
+      - BACKUP_RETENTION_DAYS=7    driver: bridge
+      - MAX_BACKUPS=10
+    volumes:
+      - app_backups:/app/backups
+      - ./scripts:/app/scripts:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["/app/scripts/backup.sh"]
+    restart: "no"
+    networks:
+      - nagaratrack_network
+    profiles:
+      - backup
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  frontend_dist:
+    driver: local
+  app_backups:
+    driver: local
+
+networks:
+  nagaratrack_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
