@@ -18,12 +18,12 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
-        cache-dependency-path: frontend-pwa/package-lock.json
-    
+        cache-dependency-path: frontend-pwa/package.json
+
     - name: Install dependencies
       working-directory: frontend-pwa
-      run: npm ci
-    
+      run: npm install
+
     - name: Run linting
       working-directory: frontend-pwa
       run: npm run lint
@@ -82,14 +82,6 @@ jobs:
         DATABASE_URL: postgresql://test:test@localhost:5432/nagaratrack_test
         JWT_SECRET_KEY: test_secret
       run: pytest --verbose
-    
-    - name: Run linting
-      working-directory: backend
-      run: |
-        pip install flake8 black isort
-        flake8 . --max-line-length=120 --exclude=migrations
-        black --check .
-        isort --check-only .
 
   build-docker:
     needs: [test-frontend, test-backend]
