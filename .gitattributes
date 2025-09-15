@@ -1,0 +1,92 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Ensure shell scripts always use LF line endings
+*.sh text eol=lf
+
+# Ensure batch files always use CRLF line endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Mark shell scripts as executable
+*.sh executable
+
+# Python files should use LF
+*.py text eol=lf
+
+# JavaScript/TypeScript files
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+
+# Web files
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
+
+# Configuration files
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.conf text eol=lf
+*.config text eol=lf
+
+# Docker files
+Dockerfile* text eol=lf
+*.dockerfile text eol=lf
+docker-compose*.yml text eol=lf
+
+# Markdown and documentation
+*.md text eol=lf
+*.txt text eol=lf
+*.rst text eol=lf
+
+# Binary files (explicitly mark as binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.pdf binary
+*.zip binary
+*.tar.gz binary
+*.tgz binary
+
+# Archive files
+*.7z binary
+*.gz binary
+*.tar binary
+*.rar binary
+
+# Font files
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+
+# Audio/Video files
+*.mp3 binary
+*.mp4 binary
+*.avi binary
+*.mov binary
+*.wmv binary
+*.wav binary
+
+# Database files
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+
+# IDE files that should maintain their format
+*.code-workspace text eol=lf
+
+# Ignore whitespace changes in generated files
+package-lock.json -diff
+yarn.lock -diff
+tsconfig.tsbuildinfo -diff

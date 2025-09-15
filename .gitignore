@@ -1,0 +1,93 @@
+# Node / Frontend
+node_modules/
+frontend-pwa/node_modules/
+frontend-pwa/dist/
+*.log
+
+# Python / Backend
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Environment & secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# Docker
+*.local.yml
+.docker/
+
+# Coverage
+coverage/
+*.coverage
+coverage.xml# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+.history/
+*.code-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.pytest_cache/
+.coverage*
+htmlcov/
+.mypy_cache/
+.pytype/
+.venv/
+venv/
+.env
+.env.*
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+.next/
+coverage/
+*.tsbuildinfo
+
+# Logs
+*.log
+logs/
+
+# Docker
+**/.dockerignore
+**/Dockerfile.local
+.tmp/
+
+# Misc
+*.swp
+*.swo
+*.tmp
+
+# Generated data (keep project data tracked unless specifically large)
+# data/ should remain tracked; add specific large files below if needed
+
+# IDEs
+.idea/
+*.iml
