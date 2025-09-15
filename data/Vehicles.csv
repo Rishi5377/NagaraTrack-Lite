@@ -1,0 +1,4 @@
+vehicle_id,route_id,latitude,longitude,bearing,speed,status,last_updated
+VH001,RT001,28.6139,77.209,45.00,25.50,active,2025-09-15T07:30:00Z
+VH002,RT002,28.6200,77.220,90.00,30.00,active,2025-09-15T07:32:00Z
+VH003,RT003,28.5500,77.100,180.00,40.00,inactive,2025-09-15T06:45:00Z

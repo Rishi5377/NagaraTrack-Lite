@@ -1,0 +1,4 @@
+route_id,route_name,route_color,is_active,coordinates,stops
+RT001,City Center Express,#2563eb,True,"[[28.6139, 77.209], [28.6149, 77.21], [28.6159, 77.211], [28.6169, 77.212]]","[""STOP_001"", ""STOP_002"", ""STOP_003""]"
+RT002,Metro Connector,#10b981,True,"[[28.6200, 77.220], [28.6210, 77.225], [28.6220, 77.230]]","[""STOP_002"", ""STOP_004"", ""STOP_005""]"
+RT003,Airport Shuttle,#f59e0b,True,"[[28.5500, 77.100], [28.5600, 77.150], [28.5700, 77.200]]","[""STOP_006"", ""STOP_007"", ""STOP_008""]"

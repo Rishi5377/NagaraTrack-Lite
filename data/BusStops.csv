@@ -1,0 +1,2 @@
+stop_id,name,latitude,longitude,routes,accessibility
+TEST001,Simple Stop,28.500000,77.200000,[],True

@@ -1,0 +1,3 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+ROUTE_42,NAGARA_TRANSPORT,42,City Center - Airport,Express route connecting city center to airport,3,,0066CC,FFFFFF
+ROUTE_15,NAGARA_TRANSPORT,15,Railway Station - Tech Park,Regular route from railway station to tech park,3,,FF6600,FFFFFF

@@ -1,0 +1,5 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,stop_timezone,wheelchair_boarding
+STOP_001,CC001,City Center,Main bus stop at city center,28.7041,77.1025,,,0,,,1
+STOP_002,AP001,Airport Terminal,Airport terminal bus stop,28.5562,77.1000,,,0,,,1
+STOP_003,RS001,Railway Station,Main railway station entrance,28.6448,77.2167,,,0,,,1
+STOP_004,TP001,Tech Park,Technology park main gate,28.4595,77.0266,,,0,,,1
