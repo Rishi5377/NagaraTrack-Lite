@@ -1,0 +1,43 @@
+# Build frontend
+FROM node:18-alpine AS web
+WORKDIR /app
+
+COPY frontend-pwa/package*.json ./
+
+# Configure npm for SSL issues
+ENV NPM_CONFIG_LEGACY_PEER_DEPS=true
+
+RUN npm config set strict-ssl false \
+    && npm install --no-audit --no-fund \
+    && npm config set strict-ssl true
+
+COPY frontend-pwa/ ./
+RUN npm run build
+
+# Build backend
+FROM python:3.11-slim AS api
+WORKDIR /app
+
+COPY backend/requirements.txt ./
+RUN pip install --upgrade pip \
+    && pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --no-cache-dir -r requirements.txt
+
+COPY backend/ ./backend/
+RUN mkdir -p /app/data && mkdir -p /app/frontend-dist && cp -r /app/backend/. /app/ && rm -rf /app/backend
+
+# Final image: serve API and static frontend together
+FROM python:3.11-slim
+ENV PYTHONUNBUFFERED=1
+WORKDIR /app
+# Copy backend runtime and deps
+COPY --from=api /usr/local/lib/python3.11 /usr/local/lib/python3.11
+COPY --from=api /usr/local/bin /usr/local/bin
+COPY --from=api /app/ /app/
+# Copy built frontend into /app/frontend-dist
+COPY --from=web /app/dist/ /app/frontend-dist/
+# Copy data directory (if any) at build time; runtime can mount a volume instead
+COPY data/ /app/data/
+ENV DATA_DIR=/app/data
+ENV FRONTEND_DIST=/app/frontend-dist
+EXPOSE 8000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
