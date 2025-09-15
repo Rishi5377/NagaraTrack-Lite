@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+/* Segmented control base styles (augmenting Tailwind utilities) */
+.segmented-control {
+    /* Tailwind provides most layout; these ensure good defaults even without utilities */
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.tab {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.tab--active {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+.icon-refresh {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #374151;
+    /* gray-700 */
+}
+
+.preview-options {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.preview-options--visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Tiny chart helpers */
+.bar-fill {
+    transition: width 600ms ease;
+}
+
+.chart-line {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.chart-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: chart-draw 1s ease forwards;
+}
+
+@keyframes chart-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
