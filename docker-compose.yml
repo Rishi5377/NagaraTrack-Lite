@@ -1,0 +1,94 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: nagaratrack-postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - nagaratrack-network
+
+  # traccar:
+  #   image: traccar/traccar:5.10
+  #   container_name: nagaratrack-traccar
+  #   restart: always
+  #   ports:
+  #     - "8082:8082"   # Web UI / API
+  #     - "5055:5055"   # Traccar Client (HTTP)
+  #     - "5005:5005"   # Optional - Android GPS
+  #     - "5023:5023"   # Additional GPS protocol
+  #   volumes:
+  #     - traccar_data:/opt/traccar/data
+  #   depends_on:
+  #     - postgres
+  #   networks:
+  #     - nagaratrack-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nagaratrack-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Provide DATABASE_URL in .env (recommended), example in .env.example
+      DATABASE_URL: ${DATABASE_URL}
+  # TRACCAR_URL disabled in dummy mode
+  # TRACCAR_URL: http://traccar:8082
+    depends_on:
+      - postgres
+  # - traccar
+    volumes:
+      - ./data/gtfs:/app/data/gtfs:ro
+      - ./data:/app/data
+    networks:
+      - nagaratrack-network
+
+  frontend:
+    build: ./frontend-pwa
+    command: npm run preview -- --host 0.0.0.0 --port 5000
+    container_name: nagaratrack-frontend
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://backend:8000}
+    depends_on:
+      - backend
+    networks:
+      - nagaratrack-network
+
+  bot:
+    build:
+      context: ./bot
+      dockerfile: Dockerfile
+    container_name: nagaratrack-bot
+    env_file:
+      - .env
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      BACKEND_URL: ${BACKEND_URL:-http://backend:8000}
+    depends_on:
+      - backend
+    networks:
+      - nagaratrack-network
+
+volumes:
+  postgres_data:
+  # traccar_data:
+
+networks:
+  nagaratrack-network:
+    driver: bridge
