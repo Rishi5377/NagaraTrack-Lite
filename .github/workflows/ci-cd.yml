@@ -1,0 +1,121 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-frontend:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: frontend-pwa/package.json
+
+    - name: Install dependencies
+      working-directory: frontend-pwa
+      run: |
+        npm install
+        npm list
+
+    - name: Run type check
+      working-directory: frontend-pwa
+      run: npm run type-check
+
+    - name: Build application
+      working-directory: frontend-pwa
+      run: npm run build
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontend-build
+        path: frontend-pwa/dist/
+
+  test-backend:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        cache-dependency-path: backend/requirements.txt
+    
+    - name: Install dependencies
+      working-directory: backend
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run syntax check
+      working-directory: backend
+      run: python -m py_compile main.py
+    
+    - name: Run basic tests
+      working-directory: backend
+      run: python test_basic.py
+
+  build-docker:
+    needs: [test-frontend, test-backend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download frontend build
+      uses: actions/download-artifact@v4
+      with:
+        name: frontend-build
+        path: frontend-pwa/dist/
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    
+    - name: Login to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Build and push Docker images
+      uses: docker/bake-action@v5
+      with:
+        files: |
+          docker-compose.yml
+          docker-compose.prod.yml
+        targets: |
+          backend
+          frontend
+        push: true
+        set: |
+          *.cache-from=type=gha
+          *.cache-to=type=gha,mode=max
+
+  deploy:
+    needs: build-docker
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to production
+      run: |
+        echo "Deployment would happen here"
+        echo "Example: Deploy to cloud provider or update Kubernetes"
+        # Add your deployment steps here

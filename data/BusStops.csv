@@ -1,2 +1,51 @@
 stop_id,name,latitude,longitude,routes,accessibility
-TEST001,Simple Stop,28.500000,77.200000,[],True
+DEL_ST001,Kashmere Gate ISBT,28.6671,77.2274,"['42', '15', '8']",True
+DEL_ST002,AIIMS Delhi,28.5665,77.21,"['42', '15']",True
+DEL_ST003,Lajpat Nagar,28.5677,77.2433,['15'],
+DEL_ST004,Saket,28.5284,77.2193,"['8', '42']",True
+DEL_ST005,Dwarka Sector 21,28.548,77.0655,['8'],
+DEL_ST006,IGI Airport T3,28.5562,77.1,['42'],True
+DEL_ST007,Connaught Place,28.6315,77.2167,"['15', '8']",True
+DEL_ST008,Karol Bagh,28.6512,77.1907,['42'],
+DEL_ST009,Noida City Centre,28.5743,77.3565,['15'],True
+DEL_ST010,Gurgaon IFFCO Chowk,28.4693,77.0482,['8'],
+MUM_ST001,Andheri Station,19.1197,72.8468,"['101', '201', '301']",True
+MUM_ST002,Bandra Station,19.0544,72.84,"['101', '202']",True
+MUM_ST003,Dadar TT Circle,19.0186,72.8446,['201'],
+MUM_ST004,Colaba Bus Depot,18.9067,72.8147,"['301', '101']",True
+MUM_ST005,Kurla Nehru Nagar,19.0726,72.8795,['202'],
+MUM_ST006,Powai IIT,19.1334,72.9133,"['201', '301']",True
+MUM_ST007,Borivali East,19.229,72.8567,"['202', '101']",True
+MUM_ST008,Chembur Naka,19.0621,72.897,['301'],
+MUM_ST009,Mulund Check Naka,19.1726,72.9563,['201'],True
+MUM_ST010,Wadala Depot,19.0092,72.8697,"['101', '202']",True
+BLR_ST001,Majestic Bus Stand,12.9766,77.5713,"['501', '601', '701']",True
+BLR_ST002,Shivajinagar,12.9833,77.605,"['501', '602']",True
+BLR_ST003,Koramangala Forum,12.9344,77.6101,['601'],
+BLR_ST004,Electronic City,12.8414,77.6636,"['701', '501']",True
+BLR_ST005,Whitefield,12.9698,77.75,['602'],
+BLR_ST006,Yeshwanthpur,13.0186,77.5561,['701'],True
+BLR_ST007,KR Market,12.9612,77.5736,"['601', '502']",True
+BLR_ST008,BTM Layout,12.9166,77.6101,['501'],
+BLR_ST009,Hebbal,13.0358,77.597,"['701', '602']",True
+BLR_ST010,Banashankari,12.918,77.5734,['601'],
+CHE_ST001,Koyambedu CMBT,13.07,80.2098,"['801', '901', '1001']",True
+CHE_ST002,Tambaram,12.9249,80.1275,"['801', '902']",True
+CHE_ST003,Guindy,13.0108,80.2206,['901'],
+CHE_ST004,T. Nagar,13.0418,80.2337,"['1001', '801']",True
+CHE_ST005,Adyar,13.0067,80.255,['902'],
+CHE_ST006,Velachery,12.9796,80.2216,['901'],True
+CHE_ST007,Anna Nagar,13.086,80.21,"['1001', '802']",True
+CHE_ST008,Saidapet,13.0214,80.2232,['801'],
+CHE_ST009,Perambur,13.1215,80.2296,"['901', '802']",True
+CHE_ST010,Mylapore,13.0336,80.2687,['1001'],
+HYD_ST001,MGBS,17.378,78.4716,"['1101', '1201', '1301']",True
+HYD_ST002,Jubilee Bus Station,17.4474,78.5033,"['1101', '1202']",True
+HYD_ST003,Hitech City,17.4483,78.3915,['1201'],
+HYD_ST004,Secunderabad,17.4399,78.4983,"['1301', '1101']",True
+HYD_ST005,LB Nagar,17.347,78.557,['1202'],
+HYD_ST006,Uppal,17.4065,78.5606,['1301'],True
+HYD_ST007,Banjara Hills,17.4146,78.4347,"['1201', '1102']",True
+HYD_ST008,Kukatpally,17.4949,78.3996,['1101'],
+HYD_ST009,Shamshabad Airport,17.2403,78.4294,['1301'],True
+HYD_ST010,Charminar,17.3616,78.4747,['1201'],

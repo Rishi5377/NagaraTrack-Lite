@@ -3,9 +3,9 @@
 import { apiClient } from './api-client';
 
 // Environment detection for static mode
-const isStaticMode = import.meta.env.VITE_STATIC_MODE === 'true' || 
-                   import.meta.env.MODE === 'production' ||
-                   (typeof window !== 'undefined' && window.location.hostname.includes('github.io'));
+const isStaticMode = import.meta.env.VITE_STATIC_MODE === 'true' ||
+  import.meta.env.MODE === 'production' ||
+  (typeof window !== 'undefined' && window.location.hostname.includes('github.io'));
 
 // Define interfaces for backward compatibility
 export interface HealthStatus {
@@ -54,7 +54,7 @@ export function getErrorMessage(error: any): string {
   if (error?.response) {
     const status = error.response.status;
     const detail = error.response.data?.detail;
-    
+
     switch (status) {
       case 400:
         return `Bad Request: ${detail || 'Invalid data format'}`;
@@ -149,13 +149,13 @@ export const stopsApi = {
 };
 
 export const routesApi = {
-  async getAll(): Promise<Array<{ 
-    route_id?: string | number; 
-    route_name?: string; 
-    route_color?: string; 
-    is_active?: boolean; 
-    coordinates?: [number, number][]; 
-    stops?: string[] 
+  async getAll(): Promise<Array<{
+    route_id?: string | number;
+    route_name?: string;
+    route_color?: string;
+    is_active?: boolean;
+    coordinates?: [number, number][];
+    stops?: string[]
   }>> {
     try {
       const response = await apiClient.get('/routes');

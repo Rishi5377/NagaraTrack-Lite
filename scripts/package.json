@@ -1,9 +1,9 @@
 {
-  "name": "build-and-test",
-  "version": "1.0.0",
-  "scripts": {
-    "test-build": "cd frontend-pwa && npm run build && npm run preview",
-    "validate-static": "cd frontend-pwa && node scripts/validate-static.js",
-    "check-assets": "cd frontend-pwa && ls -la dist/data/ && ls -la dist/assets/"
-  }
+    "name": "build-and-test",
+    "version": "1.0.0",
+    "scripts": {
+        "test-build": "cd frontend-pwa && npm run build && npm run preview",
+        "validate-static": "cd frontend-pwa && node scripts/validate-static.js",
+        "check-assets": "cd frontend-pwa && ls -la dist/data/ && ls -la dist/assets/"
+    }
 }
