@@ -1,66 +1,122 @@
 [
   {
-    "stop_id": "BTS001",
-    "name": "Central Station",
-    "latitude": 28.6139,
-    "longitude": 77.2090,
-    "routes": ["RT001", "RT003", "RT005"],
+    "stop_id": "DEL_ST001",
+    "name": "Kashmere Gate ISBT",
+    "latitude": 28.6671,
+    "longitude": 77.2274,
+    "routes": ["42", "15", "8"],
     "accessibility": true
   },
   {
-    "stop_id": "BTS002", 
-    "name": "Airport Terminal",
+    "stop_id": "DEL_ST002",
+    "name": "AIIMS Delhi",
+    "latitude": 28.5665,
+    "longitude": 77.21,
+    "routes": ["42", "15"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "DEL_ST003",
+    "name": "Lajpat Nagar",
+    "latitude": 28.5677,
+    "longitude": 77.2433,
+    "routes": ["15"],
+    "accessibility": false
+  },
+  {
+    "stop_id": "DEL_ST004",
+    "name": "Saket",
+    "latitude": 28.5284,
+    "longitude": 77.2193,
+    "routes": ["8", "42"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "DEL_ST005",
+    "name": "Dwarka Sector 21",
+    "latitude": 28.548,
+    "longitude": 77.0655,
+    "routes": ["8"],
+    "accessibility": false
+  },
+  {
+    "stop_id": "DEL_ST006",
+    "name": "IGI Airport T3",
     "latitude": 28.5562,
-    "longitude": 77.1000,
-    "routes": ["RT002", "RT004"],
+    "longitude": 77.1,
+    "routes": ["42"],
     "accessibility": true
   },
   {
-    "stop_id": "BTS003",
-    "name": "Shopping Mall",
-    "latitude": 28.5355,
-    "longitude": 77.3910,
-    "routes": ["RT001", "RT002"],
+    "stop_id": "DEL_ST007",
+    "name": "Connaught Place",
+    "latitude": 28.6315,
+    "longitude": 77.2167,
+    "routes": ["15", "8"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "HYD_ST001",
+    "name": "Secunderabad Railway Station",
+    "latitude": 17.378,
+    "longitude": 78.4716,
+    "routes": ["1101"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "HYD_ST003",
+    "name": "HITEC City",
+    "latitude": 17.4483,
+    "longitude": 78.3915,
+    "routes": ["1201"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "HYD_ST004",
+    "name": "Hyderabad Central University",
+    "latitude": 17.4399,
+    "longitude": 78.4983,
+    "routes": ["1101", "1301"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "HYD_ST006",
+    "name": "RGI Airport",
+    "latitude": 17.4065,
+    "longitude": 78.5606,
+    "routes": ["1301"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "HYD_ST007",
+    "name": "Jubilee Hills",
+    "latitude": 17.4146,
+    "longitude": 78.4347,
+    "routes": ["1201"],
     "accessibility": false
   },
   {
-    "stop_id": "BTS004",
-    "name": "University Campus",
-    "latitude": 28.6692,
-    "longitude": 77.4538,
-    "routes": ["RT003"],
-    "accessibility": true
-  },
-  {
-    "stop_id": "BTS005",
-    "name": "Hospital District",
-    "latitude": 28.6304,
-    "longitude": 77.2177,
-    "routes": ["RT004", "RT005"],
-    "accessibility": true
-  },
-  {
-    "stop_id": "BTS006",
-    "name": "Tech Park",
-    "latitude": 28.4595,
-    "longitude": 77.0266,
-    "routes": ["RT001", "RT005"],
-    "accessibility": true
-  },
-  {
-    "stop_id": "BTS007",
-    "name": "Old City Market",
-    "latitude": 28.6507,
-    "longitude": 77.2334,
-    "routes": ["RT002", "RT003"],
+    "stop_id": "HYD_ST008",
+    "name": "Charminar",
+    "latitude": 17.4949,
+    "longitude": 78.3996,
+    "routes": ["1101"],
     "accessibility": false
   },
   {
-    "stop_id": "BTS008",
-    "name": "Sports Complex",
-    "latitude": 28.6129,
-    "longitude": 77.2295,
-    "routes": ["RT004"],
+    "stop_id": "HYD_ST009",
+    "name": "Shamshabad",
+    "latitude": 17.2403,
+    "longitude": 78.4294,
+    "routes": ["1301"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "HYD_ST010",
+    "name": "Banjara Hills",
+    "latitude": 17.3616,
+    "longitude": 78.4747,
+    "routes": ["1201"],
     "accessibility": true
   }
 ]

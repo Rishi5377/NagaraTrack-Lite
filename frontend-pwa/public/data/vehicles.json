@@ -1,62 +1,80 @@
 [
   {
-    "vehicle_id": "VH001",
-    "route_id": "RT001", 
-    "latitude": 28.6039,
-    "longitude": 77.2190,
+    "vehicle_id": "DL01HC9999",
+    "route_id": "42",
+    "latitude": 28.6315,
+    "longitude": 77.2167,
     "bearing": 145,
     "speed": 35,
     "status": "in_transit",
-    "last_updated": "2025-09-16T10:30:00Z"
+    "last_updated": "2024-12-19T19:20:00Z",
+    "driver_name": "Ravi Kumar",
+    "fuel_level": 75,
+    "next_stop": "DEL_ST003"
   },
   {
-    "vehicle_id": "VH002",
-    "route_id": "RT002",
-    "latitude": 28.5662,
-    "longitude": 77.1100,
-    "bearing": 90,
-    "speed": 28,
-    "status": "at_stop",
-    "last_updated": "2025-09-16T10:28:00Z"
-  },
-  {
-    "vehicle_id": "VH003", 
-    "route_id": "RT003",
-    "latitude": 28.6592,
-    "longitude": 77.4338,
-    "bearing": 270,
+    "vehicle_id": "DL05SC7777",
+    "route_id": "15",
+    "latitude": 28.5677,
+    "longitude": 77.2433,
+    "bearing": 0,
     "speed": 0,
     "status": "at_stop",
-    "last_updated": "2025-09-16T10:32:00Z"
+    "last_updated": "2024-12-19T19:18:30Z",
+    "driver_name": "Amit Singh",
+    "fuel_level": 82,
+    "next_stop": "DEL_ST009"
   },
   {
-    "vehicle_id": "VH004",
-    "route_id": "RT004",
-    "latitude": 28.6204,
-    "longitude": 77.2077,
+    "vehicle_id": "DL09GA5555",
+    "route_id": "8",
+    "latitude": 28.5284,
+    "longitude": 77.2193,
     "bearing": 225,
-    "speed": 42,
-    "status": "in_transit", 
-    "last_updated": "2025-09-16T10:29:00Z"
-  },
-  {
-    "vehicle_id": "VH005",
-    "route_id": "RT005",
-    "latitude": 28.4695,
-    "longitude": 77.0366,
-    "bearing": 180,
-    "speed": 15,
-    "status": "delayed",
-    "last_updated": "2025-09-16T10:25:00Z"
-  },
-  {
-    "vehicle_id": "VH006",
-    "route_id": "RT001",
-    "latitude": 28.5455,
-    "longitude": 77.3810,
-    "bearing": 45,
-    "speed": 38,
+    "speed": 28,
     "status": "in_transit",
-    "last_updated": "2025-09-16T10:31:00Z"
+    "last_updated": "2024-12-19T19:19:45Z",
+    "driver_name": "Suresh Yadav",
+    "fuel_level": 68,
+    "next_stop": "DEL_ST004"
+  },
+  {
+    "vehicle_id": "TS07UB3333",
+    "route_id": "1101",
+    "latitude": 17.4200,
+    "longitude": 78.4850,
+    "bearing": 90,
+    "speed": 42,
+    "status": "in_transit",
+    "last_updated": "2024-12-19T19:20:15Z",
+    "driver_name": "Venkata Reddy",
+    "fuel_level": 90,
+    "next_stop": "HYD_ST004"
+  },
+  {
+    "vehicle_id": "TS08HY1111",
+    "route_id": "1201",
+    "latitude": 17.4146,
+    "longitude": 78.4347,
+    "bearing": 0,
+    "speed": 0,
+    "status": "at_stop",
+    "last_updated": "2024-12-19T19:17:20Z",
+    "driver_name": "Krishna Murthy",
+    "fuel_level": 55,
+    "next_stop": "HYD_ST007"
+  },
+  {
+    "vehicle_id": "TS09UC9876",
+    "route_id": "1301",
+    "latitude": 17.3600,
+    "longitude": 78.4800,
+    "bearing": 180,
+    "speed": 31,
+    "status": "in_transit",
+    "last_updated": "2024-12-19T19:19:00Z",
+    "driver_name": "Rajesh Gupta",
+    "fuel_level": 71,
+    "next_stop": "HYD_ST006"
   }
 ]
