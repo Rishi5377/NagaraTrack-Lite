@@ -66,6 +66,20 @@ export class StaticApiClient {
     }
   }
 
+  // Generic post method for API consistency (demo mode)
+  async post(endpoint: string, data?: any): Promise<any> {
+    await this.delay();
+    console.log(`🎮 Demo POST to ${endpoint}:`, data);
+    return { data: { success: true, message: 'Demo operation completed' } };
+  }
+
+  // Generic delete method for API consistency (demo mode)
+  async delete(endpoint: string): Promise<any> {
+    await this.delay();
+    console.log(`🎮 Demo DELETE to ${endpoint}`);
+    return { data: { success: true, message: 'Demo operation completed' } };
+  }
+
   // Simulate network delay for realistic feel
   private async delay(ms: number = 300): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));

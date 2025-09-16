@@ -20,7 +20,7 @@ export const useRealtimeVehicles = ({
 }: UseRealtimeVehiclesProps): UseRealtimeVehiclesReturn => {
   const [realtimeVehicles, setRealtimeVehicles] = useState<Vehicle[]>(vehicles);
   const [isSimulating, setIsSimulating] = useState(enabled);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<number | null>(null);
 
   // Initialize vehicles when prop changes
   useEffect(() => {
@@ -86,7 +86,7 @@ export const useRealtimeVehicles = ({
           }
           
           if (shouldChangeStatus) {
-            const statuses = ['in_transit', 'at_stop', 'delayed'];
+            const statuses: ('in_transit' | 'at_stop' | 'delayed')[] = ['in_transit', 'at_stop', 'delayed'];
             newStatus = statuses[Math.floor(Math.random() * statuses.length)];
           }
           

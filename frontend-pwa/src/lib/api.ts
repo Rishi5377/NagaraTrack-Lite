@@ -191,6 +191,12 @@ export const routesApi = {
       return [];
     }
   },
+
+  // Alias for backward compatibility
+  async getGeojson(): Promise<{ features: RouteFeature[] }> {
+    const features = await this.getAllGeoJSON();
+    return { features };
+  },
 };
 
 // Export the smart API client as the main API

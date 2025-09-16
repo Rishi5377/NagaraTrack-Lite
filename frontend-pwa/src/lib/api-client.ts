@@ -39,6 +39,19 @@ class BackendApiClient {
     return this.request(endpoint, { method: 'GET' });
   }
 
+  // Generic post method for API consistency
+  async post(endpoint: string, data?: any) {
+    return this.request(endpoint, {
+      method: 'POST',
+      body: data ? JSON.stringify(data) : undefined,
+    });
+  }
+
+  // Generic delete method for API consistency
+  async delete(endpoint: string) {
+    return this.request(endpoint, { method: 'DELETE' });
+  }
+
   // Authentication
   async login(username: string, password: string) {
     const response = await this.request('/api/auth/login', {
