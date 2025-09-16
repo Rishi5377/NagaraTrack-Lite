@@ -1,0 +1,62 @@
+[
+  {
+    "vehicle_id": "VH001",
+    "route_id": "RT001", 
+    "latitude": 28.6039,
+    "longitude": 77.2190,
+    "bearing": 145,
+    "speed": 35,
+    "status": "in_transit",
+    "last_updated": "2025-09-16T10:30:00Z"
+  },
+  {
+    "vehicle_id": "VH002",
+    "route_id": "RT002",
+    "latitude": 28.5662,
+    "longitude": 77.1100,
+    "bearing": 90,
+    "speed": 28,
+    "status": "at_stop",
+    "last_updated": "2025-09-16T10:28:00Z"
+  },
+  {
+    "vehicle_id": "VH003", 
+    "route_id": "RT003",
+    "latitude": 28.6592,
+    "longitude": 77.4338,
+    "bearing": 270,
+    "speed": 0,
+    "status": "at_stop",
+    "last_updated": "2025-09-16T10:32:00Z"
+  },
+  {
+    "vehicle_id": "VH004",
+    "route_id": "RT004",
+    "latitude": 28.6204,
+    "longitude": 77.2077,
+    "bearing": 225,
+    "speed": 42,
+    "status": "in_transit", 
+    "last_updated": "2025-09-16T10:29:00Z"
+  },
+  {
+    "vehicle_id": "VH005",
+    "route_id": "RT005",
+    "latitude": 28.4695,
+    "longitude": 77.0366,
+    "bearing": 180,
+    "speed": 15,
+    "status": "delayed",
+    "last_updated": "2025-09-16T10:25:00Z"
+  },
+  {
+    "vehicle_id": "VH006",
+    "route_id": "RT001",
+    "latitude": 28.5455,
+    "longitude": 77.3810,
+    "bearing": 45,
+    "speed": 38,
+    "status": "in_transit",
+    "last_updated": "2025-09-16T10:31:00Z"
+  }
+]

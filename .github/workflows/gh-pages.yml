@@ -1,4 +1,4 @@
-name: Deploy Frontend to GitHub Pages
+name: Deploy NagaraTrack-Lite to GitHub Pages
 
 on:
   push:
@@ -24,23 +24,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
           cache-dependency-path: frontend-pwa/package.json
 
-      - name: Install deps
+      - name: Install dependencies
         working-directory: frontend-pwa
-        run: npm install
+        run: npm ci
 
-      - name: Build frontend
+      - name: Build static application
         working-directory: frontend-pwa
         env:
-          VITE_API_URL: https://api.example.com
-          BASE_PATH: /${{ github.event.repository.name }}/
+          NODE_ENV: production
+          VITE_STATIC_MODE: 'true'
         run: npm run build
+
+      - name: Verify build output
+        working-directory: frontend-pwa
+        run: |
+          echo "Build completed successfully"
+          ls -la dist/
+          echo "Data files:"
+          ls -la dist/data/ || echo "No data directory found"
+          echo "Assets:"
+          ls -la dist/assets/ || echo "No assets directory found"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -60,3 +70,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Post-deployment notification
+        run: |
+          echo "🚀 NagaraTrack-Lite Demo deployed successfully!"
+          echo "📍 URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "✅ Static mode enabled for GitHub Pages compatibility"

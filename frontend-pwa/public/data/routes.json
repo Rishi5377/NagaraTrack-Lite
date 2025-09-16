@@ -1,0 +1,76 @@
+[
+  {
+    "route_id": "RT001",
+    "route_name": "Metro Link Express",
+    "route_color": "#FF6B6B",
+    "is_active": true,
+    "coordinates": [
+      [28.6139, 77.2090],
+      [28.6000, 77.2500],
+      [28.5800, 77.3000],
+      [28.5355, 77.3910],
+      [28.4800, 77.0800],
+      [28.4595, 77.0266]
+    ],
+    "stops": ["BTS001", "BTS003", "BTS006"]
+  },
+  {
+    "route_id": "RT002", 
+    "route_name": "Airport Shuttle",
+    "route_color": "#4ECDC4",
+    "is_active": true,
+    "coordinates": [
+      [28.5562, 77.1000],
+      [28.5700, 77.2000],
+      [28.5900, 77.3500],
+      [28.5355, 77.3910],
+      [28.6400, 77.2200],
+      [28.6507, 77.2334]
+    ],
+    "stops": ["BTS002", "BTS003", "BTS007"]
+  },
+  {
+    "route_id": "RT003",
+    "route_name": "University Circuit", 
+    "route_color": "#45B7D1",
+    "is_active": true,
+    "coordinates": [
+      [28.6139, 77.2090],
+      [28.6300, 77.3000],
+      [28.6500, 77.4000],
+      [28.6692, 77.4538],
+      [28.6600, 77.2400],
+      [28.6507, 77.2334]
+    ],
+    "stops": ["BTS001", "BTS004", "BTS007"]
+  },
+  {
+    "route_id": "RT004",
+    "route_name": "Healthcare Connector",
+    "route_color": "#96CEB4", 
+    "is_active": true,
+    "coordinates": [
+      [28.5562, 77.1000],
+      [28.5900, 77.1500],
+      [28.6200, 77.2000],
+      [28.6304, 77.2177],
+      [28.6200, 77.2250],
+      [28.6129, 77.2295]
+    ],
+    "stops": ["BTS002", "BTS005", "BTS008"]
+  },
+  {
+    "route_id": "RT005",
+    "route_name": "Business District Loop",
+    "route_color": "#FFEAA7",
+    "is_active": true,
+    "coordinates": [
+      [28.6139, 77.2090],
+      [28.6200, 77.2150],
+      [28.6304, 77.2177],
+      [28.5000, 77.1000],
+      [28.4595, 77.0266]
+    ],
+    "stops": ["BTS001", "BTS005", "BTS006"]
+  }
+]

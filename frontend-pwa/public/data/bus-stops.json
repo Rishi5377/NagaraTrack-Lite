@@ -1,0 +1,66 @@
+[
+  {
+    "stop_id": "BTS001",
+    "name": "Central Station",
+    "latitude": 28.6139,
+    "longitude": 77.2090,
+    "routes": ["RT001", "RT003", "RT005"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "BTS002", 
+    "name": "Airport Terminal",
+    "latitude": 28.5562,
+    "longitude": 77.1000,
+    "routes": ["RT002", "RT004"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "BTS003",
+    "name": "Shopping Mall",
+    "latitude": 28.5355,
+    "longitude": 77.3910,
+    "routes": ["RT001", "RT002"],
+    "accessibility": false
+  },
+  {
+    "stop_id": "BTS004",
+    "name": "University Campus",
+    "latitude": 28.6692,
+    "longitude": 77.4538,
+    "routes": ["RT003"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "BTS005",
+    "name": "Hospital District",
+    "latitude": 28.6304,
+    "longitude": 77.2177,
+    "routes": ["RT004", "RT005"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "BTS006",
+    "name": "Tech Park",
+    "latitude": 28.4595,
+    "longitude": 77.0266,
+    "routes": ["RT001", "RT005"],
+    "accessibility": true
+  },
+  {
+    "stop_id": "BTS007",
+    "name": "Old City Market",
+    "latitude": 28.6507,
+    "longitude": 77.2334,
+    "routes": ["RT002", "RT003"],
+    "accessibility": false
+  },
+  {
+    "stop_id": "BTS008",
+    "name": "Sports Complex",
+    "latitude": 28.6129,
+    "longitude": 77.2295,
+    "routes": ["RT004"],
+    "accessibility": true
+  }
+]
