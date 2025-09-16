@@ -1,0 +1,95 @@
+# Docker Compose for Full-Stack Development
+# This allows you to run both backend and frontend for testing with real APIs
+
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: nagaratrack-db
+    environment:
+      POSTGRES_DB: nagaratrack
+      POSTGRES_USER: nagaratrack
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nagaratrack"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nagaratrack-backend
+    environment:
+      # Database connection
+      DATABASE_URL: postgresql://nagaratrack:password123@postgres:5432/nagaratrack
+      
+      # API configuration
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      
+      # Security
+      JWT_SECRET_KEY: your-super-secret-jwt-key-change-in-production
+      JWT_ALGORITHM: HS256
+      JWT_ACCESS_TOKEN_EXPIRE_MINUTES: 30
+      
+      # Data directory
+      DATA_DIR: /app/data
+      
+      # CORS settings
+      ALLOWED_ORIGINS: http://localhost:5000,http://localhost:3000,https://*.github.io
+      
+      # Environment
+      ENVIRONMENT: development
+      DEBUG: "true"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./backend:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/docs || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Frontend Development Server (Optional - for testing backend integration)
+  frontend-dev:
+    build:
+      context: ./frontend-pwa
+      dockerfile: Dockerfile.dev
+    container_name: nagaratrack-frontend-dev
+    environment:
+      - VITE_STATIC_MODE=false
+      - VITE_API_URL=http://localhost:8000
+      - VITE_DEMO_MODE=false
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend-pwa:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    profiles:
+      - dev-with-frontend
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  default:
+    name: nagaratrack-network
