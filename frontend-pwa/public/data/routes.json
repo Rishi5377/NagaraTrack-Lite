@@ -5,123 +5,142 @@
         "route_color": "#e11d48",
         "is_active": true,
         "coordinates": [
-            [
-                28.6671,
-                77.2274
-            ],
-            [
-                28.6500,
-                77.2200
-            ],
-            [
-                28.6315,
-                77.2167
-            ],
-            [
-                28.6100,
-                77.2100
-            ],
-            [
-                28.5900,
-                77.2200
-            ],
-            [
-                28.5677,
-                77.2433
-            ],
-            [
-                28.5600,
-                77.2300
-            ],
-            [
-                28.5562,
-                77.1000
-            ]
+            [28.6671, 77.2274],
+            [28.6315, 77.2167],
+            [28.5677, 77.2433],
+            [28.5284, 77.2193],
+            [28.5562, 77.1000]
         ],
-        "stops": [
-            "DEL_ST001",
-            "DEL_ST007",
-            "DEL_ST003",
-            "DEL_ST006"
-        ]
+        "stops": ["DEL_ST001", "DEL_ST007", "DEL_ST003", "DEL_ST004", "DEL_ST006"]
     },
     {
         "route_id": "15",
-        "route_name": "Central Delhi Loop",
+        "route_name": "Central Delhi Metro Feeder",
         "route_color": "#2563eb",
         "is_active": true,
         "coordinates": [
-            [
-                28.5665,
-                77.2100
-            ],
-            [
-                28.5700,
-                77.2300
-            ],
-            [
-                28.5677,
-                77.2433
-            ],
-            [
-                28.5750,
-                77.2800
-            ],
-            [
-                28.5800,
-                77.3200
-            ],
-            [
-                28.5743,
-                77.3565
-            ]
+            [28.5665, 77.2100],
+            [28.5677, 77.2433],
+            [28.6315, 77.2167],
+            [28.5743, 77.3565]
         ],
-        "stops": [
-            "DEL_ST002",
-            "DEL_ST003",
-            "DEL_ST009"
-        ]
+        "stops": ["DEL_ST002", "DEL_ST003", "DEL_ST007", "DEL_ST009"]
     },
     {
         "route_id": "8",
-        "route_name": "Southwest Connector",
+        "route_name": "Southwest Delhi Connector",
         "route_color": "#16a34a",
         "is_active": true,
         "coordinates": [
-            [
-                28.548,
-                77.0655
-            ],
-            [
-                28.5400,
-                77.1000
-            ],
-            [
-                28.5300,
-                77.1500
-            ],
-            [
-                28.5284,
-                77.2193
-            ],
-            [
-                28.5000,
-                77.1800
-            ],
-            [
-                28.4800,
-                77.1200
-            ],
-            [
-                28.4693,
-                77.0482
-            ]
+            [28.548, 77.0655],
+            [28.5284, 77.2193],
+            [28.6315, 77.2167],
+            [28.4693, 77.0482]
         ],
-        "stops": [
-            "DEL_ST005",
-            "DEL_ST004",
-            "DEL_ST010"
-        ]
+        "stops": ["DEL_ST005", "DEL_ST004", "DEL_ST007", "DEL_ST010"]
+    },
+    {
+        "route_id": "101",
+        "route_name": "Mumbai Western Express",
+        "route_color": "#e11d48",
+        "is_active": true,
+        "coordinates": [
+            [19.1197, 72.8468],
+            [19.0544, 72.84],
+            [18.9067, 72.8147]
+        ],
+        "stops": ["MUM_ST001", "MUM_ST002", "MUM_ST004"]
+    },
+    {
+        "route_id": "201",
+        "route_name": "Mumbai Central Loop",
+        "route_color": "#2563eb",
+        "is_active": true,
+        "coordinates": [
+            [19.1197, 72.8468],
+            [19.0186, 72.8446]
+        ],
+        "stops": ["MUM_ST001", "MUM_ST003"]
+    },
+    {
+        "route_id": "301",
+        "route_name": "South Mumbai Heritage",
+        "route_color": "#16a34a",
+        "is_active": true,
+        "coordinates": [
+            [19.1197, 72.8468],
+            [18.9067, 72.8147]
+        ],
+        "stops": ["MUM_ST001", "MUM_ST004"]
+    },
+    {
+        "route_id": "501",
+        "route_name": "Bangalore IT Corridor",
+        "route_color": "#e11d48",
+        "is_active": true,
+        "coordinates": [
+            [12.9766, 77.5713],
+            [12.9833, 77.605],
+            [12.9344, 77.6101],
+            [12.8414, 77.6636]
+        ],
+        "stops": ["BLR_ST001", "BLR_ST002", "BLR_ST003", "BLR_ST004"]
+    },
+    {
+        "route_id": "601",
+        "route_name": "Bangalore Shopping Express",
+        "route_color": "#2563eb",
+        "is_active": true,
+        "coordinates": [
+            [12.9766, 77.5713],
+            [12.9344, 77.6101]
+        ],
+        "stops": ["BLR_ST001", "BLR_ST003"]
+    },
+    {
+        "route_id": "701",
+        "route_name": "Electronic City Direct",
+        "route_color": "#16a34a",
+        "is_active": true,
+        "coordinates": [
+            [12.9766, 77.5713],
+            [12.8414, 77.6636]
+        ],
+        "stops": ["BLR_ST001", "BLR_ST004"]
+    },
+    {
+        "route_id": "801",
+        "route_name": "Chennai Metro Feeder",
+        "route_color": "#e11d48",
+        "is_active": true,
+        "coordinates": [
+            [13.07, 80.2098],
+            [13.0418, 80.2337]
+        ],
+        "stops": ["CHE_ST001", "CHE_ST002"]
+    },
+    {
+        "route_id": "901",
+        "route_name": "Chennai Beach Line",
+        "route_color": "#2563eb",
+        "is_active": true,
+        "coordinates": [
+            [13.0475, 80.2824],
+            [12.9796, 80.2216]
+        ],
+        "stops": ["CHE_ST003", "CHE_ST005"]
+    },
+    {
+        "route_id": "1001",
+        "route_name": "Chennai Commercial Circuit",
+        "route_color": "#16a34a",
+        "is_active": true,
+        "coordinates": [
+            [13.086, 80.21],
+            [13.0418, 80.2337],
+            [13.07, 80.2098]
+        ],
+        "stops": ["CHE_ST004", "CHE_ST002", "CHE_ST001"]
     },
     {
         "route_id": "1101",
@@ -129,137 +148,37 @@
         "route_color": "#e11d48",
         "is_active": true,
         "coordinates": [
-            [
-                17.378,
-                78.4716
-            ],
-            [
-                17.3850,
-                78.4750
-            ],
-            [
-                17.4000,
-                78.4800
-            ],
-            [
-                17.4200,
-                78.4850
-            ],
-            [
-                17.4399,
-                78.4983
-            ],
-            [
-                17.4500,
-                78.4500
-            ],
-            [
-                17.4700,
-                78.4200
-            ],
-            [
-                17.4900,
-                78.4000
-            ],
-            [
-                17.4949,
-                78.3996
-            ]
+            [17.378, 78.4716],
+            [17.4949, 78.3996],
+            [17.4474, 78.5033],
+            [17.4399, 78.4983]
         ],
-        "stops": [
-            "HYD_ST001",
-            "HYD_ST004",
-            "HYD_ST008"
-        ]
+        "stops": ["HYD_ST001", "HYD_ST005", "HYD_ST008", "HYD_ST010"]
     },
     {
         "route_id": "1201",
-        "route_name": "Hitech Express",
+        "route_name": "Hyderabad Tech Express",
         "route_color": "#2563eb",
         "is_active": true,
         "coordinates": [
-            [
-                17.4483,
-                78.3915
-            ],
-            [
-                17.4400,
-                78.4000
-            ],
-            [
-                17.4300,
-                78.4200
-            ],
-            [
-                17.4146,
-                78.4347
-            ],
-            [
-                17.4000,
-                78.4500
-            ],
-            [
-                17.3800,
-                78.4650
-            ],
-            [
-                17.3616,
-                78.4747
-            ]
+            [17.378, 78.4716],
+            [17.4483, 78.3915],
+            [17.4146, 78.4347],
+            [17.3616, 78.4747]
         ],
-        "stops": [
-            "HYD_ST003",
-            "HYD_ST007",
-            "HYD_ST010"
-        ]
+        "stops": ["HYD_ST001", "HYD_ST002", "HYD_ST004", "HYD_ST003"]
     },
     {
         "route_id": "1301",
-        "route_name": "Airport Line",
+        "route_name": "Airport Express Line",
         "route_color": "#16a34a",
         "is_active": true,
         "coordinates": [
-            [
-                17.2403,
-                78.4294
-            ],
-            [
-                17.2800,
-                78.4400
-            ],
-            [
-                17.3200,
-                78.4600
-            ],
-            [
-                17.3600,
-                78.4800
-            ],
-            [
-                17.4000,
-                78.5200
-            ],
-            [
-                17.4065,
-                78.5606
-            ],
-            [
-                17.4200,
-                78.5400
-            ],
-            [
-                17.4300,
-                78.5200
-            ],
-            [
-                17.4399,
-                78.4983
-            ]
+            [17.2403, 78.4294],
+            [17.4065, 78.5606],
+            [17.4399, 78.4983],
+            [17.378, 78.4716]
         ],
-        "stops": [
-            "HYD_ST009",
-            "HYD_ST006",
-            "HYD_ST004"
-        ]
+        "stops": ["HYD_ST006", "HYD_ST007", "HYD_ST010", "HYD_ST001"]
     }
 ]

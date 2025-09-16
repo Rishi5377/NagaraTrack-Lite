@@ -4,11 +4,7 @@
         "name": "Kashmere Gate ISBT",
         "latitude": 28.6671,
         "longitude": 77.2274,
-        "routes": [
-            "42",
-            "15",
-            "8"
-        ],
+        "routes": ["42", "15", "8"],
         "accessibility": true
     },
     {
@@ -16,62 +12,191 @@
         "name": "AIIMS Delhi",
         "latitude": 28.5665,
         "longitude": 77.21,
-        "routes": [
-            "42",
-            "15"
-        ],
+        "routes": ["42", "15"],
         "accessibility": true
     },
     {
         "stop_id": "DEL_ST003",
-        "name": "Lajpat Nagar",
+        "name": "Lajpat Nagar Central Market",
         "latitude": 28.5677,
         "longitude": 77.2433,
-        "routes": [
-            "15"
-        ],
+        "routes": ["15"],
         "accessibility": false
     },
     {
         "stop_id": "DEL_ST004",
-        "name": "Saket",
+        "name": "Saket District Centre",
         "latitude": 28.5284,
         "longitude": 77.2193,
-        "routes": [
-            "8",
-            "42"
-        ],
+        "routes": ["8", "42"],
         "accessibility": true
     },
     {
         "stop_id": "DEL_ST005",
-        "name": "Dwarka Sector 21",
+        "name": "Dwarka Sector 21 Metro",
         "latitude": 28.548,
         "longitude": 77.0655,
-        "routes": [
-            "8"
-        ],
-        "accessibility": false
+        "routes": ["8"],
+        "accessibility": true
     },
     {
         "stop_id": "DEL_ST006",
-        "name": "IGI Airport T3",
+        "name": "IGI Airport Terminal 3",
         "latitude": 28.5562,
         "longitude": 77.1,
-        "routes": [
-            "42"
-        ],
+        "routes": ["42"],
         "accessibility": true
     },
     {
         "stop_id": "DEL_ST007",
-        "name": "Connaught Place",
+        "name": "Connaught Place Central Park",
         "latitude": 28.6315,
         "longitude": 77.2167,
-        "routes": [
-            "15",
-            "8"
-        ],
+        "routes": ["15", "8"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "DEL_ST008",
+        "name": "Karol Bagh Main Market",
+        "latitude": 28.6512,
+        "longitude": 77.1907,
+        "routes": ["42"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "DEL_ST009",
+        "name": "Noida City Centre Metro",
+        "latitude": 28.5743,
+        "longitude": 77.3565,
+        "routes": ["15"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "DEL_ST010",
+        "name": "Gurgaon IFFCO Chowk",
+        "latitude": 28.4693,
+        "longitude": 77.0482,
+        "routes": ["8"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "MUM_ST001",
+        "name": "Andheri Railway Station East",
+        "latitude": 19.1197,
+        "longitude": 72.8468,
+        "routes": ["101", "201", "301"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "MUM_ST002",
+        "name": "Bandra Bandstand",
+        "latitude": 19.0544,
+        "longitude": 72.84,
+        "routes": ["101", "202"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "MUM_ST003",
+        "name": "Dadar Flower Market",
+        "latitude": 19.0186,
+        "longitude": 72.8446,
+        "routes": ["201"],
+        "accessibility": false
+    },
+    {
+        "stop_id": "MUM_ST004",
+        "name": "Colaba Causeway",
+        "latitude": 18.9067,
+        "longitude": 72.8147,
+        "routes": ["301", "101"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "MUM_ST005",
+        "name": "Kurla Terminus",
+        "latitude": 19.0726,
+        "longitude": 72.8795,
+        "routes": ["202"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "BLR_ST001",
+        "name": "Majestic Bus Station",
+        "latitude": 12.9766,
+        "longitude": 77.5713,
+        "routes": ["501", "601", "701"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "BLR_ST002",
+        "name": "MG Road Commercial Street",
+        "latitude": 12.9833,
+        "longitude": 77.605,
+        "routes": ["501", "602"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "BLR_ST003",
+        "name": "Koramangala Forum Mall",
+        "latitude": 12.9344,
+        "longitude": 77.6101,
+        "routes": ["601"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "BLR_ST004",
+        "name": "Electronic City Phase 1",
+        "latitude": 12.8414,
+        "longitude": 77.6636,
+        "routes": ["701", "501"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "BLR_ST005",
+        "name": "Whitefield ITPL",
+        "latitude": 12.9698,
+        "longitude": 77.75,
+        "routes": ["602"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "CHE_ST001",
+        "name": "Koyambedu Bus Terminus",
+        "latitude": 13.07,
+        "longitude": 80.2098,
+        "routes": ["801", "901", "1001"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "CHE_ST002",
+        "name": "T Nagar Ranganathan Street",
+        "latitude": 13.0418,
+        "longitude": 80.2337,
+        "routes": ["1001", "801"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "CHE_ST003",
+        "name": "Marina Beach",
+        "latitude": 13.0475,
+        "longitude": 80.2824,
+        "routes": ["901"],
+        "accessibility": false
+    },
+    {
+        "stop_id": "CHE_ST004",
+        "name": "Anna Nagar Tower",
+        "latitude": 13.086,
+        "longitude": 80.21,
+        "routes": ["1001", "802"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "CHE_ST005",
+        "name": "Velachery Phoenix Mall",
+        "latitude": 12.9796,
+        "longitude": 80.2216,
+        "routes": ["901"],
         "accessibility": true
     },
     {
@@ -79,80 +204,79 @@
         "name": "Secunderabad Railway Station",
         "latitude": 17.378,
         "longitude": 78.4716,
-        "routes": [
-            "1101"
-        ],
+        "routes": ["1101", "1201", "1301"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "HYD_ST002",
+        "name": "HITEC City Cyber Towers",
+        "latitude": 17.4483,
+        "longitude": 78.3915,
+        "routes": ["1201"],
         "accessibility": true
     },
     {
         "stop_id": "HYD_ST003",
-        "name": "HITEC City",
-        "latitude": 17.4483,
-        "longitude": 78.3915,
-        "routes": [
-            "1201"
-        ],
-        "accessibility": true
+        "name": "Charminar Historical Monument",
+        "latitude": 17.3616,
+        "longitude": 78.4747,
+        "routes": ["1201"],
+        "accessibility": false
     },
     {
         "stop_id": "HYD_ST004",
-        "name": "Hyderabad Central University",
-        "latitude": 17.4399,
-        "longitude": 78.4983,
-        "routes": [
-            "1101",
-            "1301"
-        ],
+        "name": "Banjara Hills Road No 12",
+        "latitude": 17.4146,
+        "longitude": 78.4347,
+        "routes": ["1201", "1102"],
+        "accessibility": true
+    },
+    {
+        "stop_id": "HYD_ST005",
+        "name": "Kukatpally JNTU",
+        "latitude": 17.4949,
+        "longitude": 78.3996,
+        "routes": ["1101"],
         "accessibility": true
     },
     {
         "stop_id": "HYD_ST006",
-        "name": "RGI Airport",
-        "latitude": 17.4065,
-        "longitude": 78.5606,
-        "routes": [
-            "1301"
-        ],
+        "name": "Shamshabad Airport",
+        "latitude": 17.2403,
+        "longitude": 78.4294,
+        "routes": ["1301"],
         "accessibility": true
     },
     {
         "stop_id": "HYD_ST007",
-        "name": "Jubilee Hills",
-        "latitude": 17.4146,
-        "longitude": 78.4347,
-        "routes": [
-            "1201"
-        ],
-        "accessibility": false
+        "name": "Uppal Stadium",
+        "latitude": 17.4065,
+        "longitude": 78.5606,
+        "routes": ["1301"],
+        "accessibility": true
     },
     {
         "stop_id": "HYD_ST008",
-        "name": "Charminar",
-        "latitude": 17.4949,
-        "longitude": 78.3996,
-        "routes": [
-            "1101"
-        ],
-        "accessibility": false
+        "name": "Jubilee Hills Check Post",
+        "latitude": 17.4474,
+        "longitude": 78.5033,
+        "routes": ["1101", "1202"],
+        "accessibility": true
     },
     {
         "stop_id": "HYD_ST009",
-        "name": "Shamshabad",
-        "latitude": 17.2403,
-        "longitude": 78.4294,
-        "routes": [
-            "1301"
-        ],
+        "name": "LB Nagar Metro",
+        "latitude": 17.347,
+        "longitude": 78.557,
+        "routes": ["1202"],
         "accessibility": true
     },
     {
         "stop_id": "HYD_ST010",
-        "name": "Banjara Hills",
-        "latitude": 17.3616,
-        "longitude": 78.4747,
-        "routes": [
-            "1201"
-        ],
+        "name": "Gachibowli IT Hub",
+        "latitude": 17.4399,
+        "longitude": 78.4983,
+        "routes": ["1301", "1101"],
         "accessibility": true
     }
 ]
